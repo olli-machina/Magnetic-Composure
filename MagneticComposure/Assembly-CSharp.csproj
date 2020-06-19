@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Magnet.cs" />
     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\RadiusControl.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\ScoreParticleController.cs" />
     <Compile Include="Assets\Scripts\SentenceController.cs" />

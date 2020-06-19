@@ -28,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mouseWorldPosition - (Vector2)transform.position).normalized;
-        transform.up = direction;
+        //Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 direction = (mouseWorldPosition - (Vector2)transform.position).normalized;
+        //transform.up = direction;
     }
 
     void FixedUpdate()
