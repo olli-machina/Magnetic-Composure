@@ -16,6 +16,8 @@ public class FallingWords : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
+
         wordText = GetComponent<TMP_Text>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody2D>();
