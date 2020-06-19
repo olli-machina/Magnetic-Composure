@@ -288,7 +288,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 27.5
+  m_fontSize: 14.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1144,6 +1144,7 @@ GameObject:
   - component: {fileID: 902120400}
   - component: {fileID: 902120399}
   - component: {fileID: 902120398}
+  - component: {fileID: 902120402}
   - component: {fileID: 902120401}
   - component: {fileID: 902120397}
   m_Layer: 5
@@ -1279,6 +1280,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 664f3c7a413a7544b9bf65aaadf6614d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &902120402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902120395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540209af3a8b3f7458b35f15d7feb4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &903796420
@@ -1506,7 +1519,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 53.25
+  m_fontSize: 25.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
