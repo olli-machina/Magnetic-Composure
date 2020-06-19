@@ -65,6 +65,7 @@ public class SentenceController : MonoBehaviour
         {
             collisions.Add(leftSide + ((test.IndexOf("_____") + 2.5f) * plannedFontWidth));
             leftSide = leftSide + ((test.IndexOf("_____") + 5) * plannedFontWidth);
+            if(test.Length > test.IndexOf("_____") + 6)
             test = test.Substring(test.IndexOf("_____") + 6);
         }
 
