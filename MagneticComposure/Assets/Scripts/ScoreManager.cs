@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public Color neu;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI senetenceCountText;
     public GameObject scoreParticlePrefab;
 
     public int score;
@@ -33,6 +34,7 @@ public class ScoreManager : MonoBehaviour
     {
         time = time + Time.deltaTime;
         scoreText.text = "" + score + "/" + scoreToWin;
+        senetenceCountText.text = "" + sentencesFilledCount + " Sentences Filled";
     }
 
     public void ChangeScore(int points, string sentenceFilled)
