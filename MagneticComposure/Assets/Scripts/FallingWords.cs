@@ -46,14 +46,14 @@ public class FallingWords : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.tag != "Positive" || col.tag != "Negative")
+        if (col.transform.tag == "Player")
         {
-            Physics2D.IgnoreCollision(col.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
             
         }
-        else if (col.tag == gameObject.tag)
+        else if (col.transform.tag == gameObject.tag)
         {
             //add to score
         }
