@@ -288,7 +288,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.1
+  m_fontSize: 27.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -334,7 +334,7 @@ MonoBehaviour:
     spaceCount: 2
     wordCount: 3
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 367217305}
   - component: {fileID: 367217307}
   - component: {fileID: 367217306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestroyWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 407895656}
   - component: {fileID: 407895658}
   - component: {fileID: 407895657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 456616007}
   - component: {fileID: 456616009}
   - component: {fileID: 456616008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 484337664}
   - component: {fileID: 484337666}
   - component: {fileID: 484337665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestroyWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 600325330}
   - component: {fileID: 600325332}
   - component: {fileID: 600325331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 689527922}
   - component: {fileID: 689527924}
   - component: {fileID: 689527923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestroyWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 804875065}
   - component: {fileID: 804875067}
   - component: {fileID: 804875066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1074468549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Constraints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 81.45
+  m_fontSize: 53.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 1483946522}
   - component: {fileID: 1483946521}
   - component: {fileID: 1483946520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
