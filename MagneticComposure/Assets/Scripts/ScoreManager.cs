@@ -24,6 +24,9 @@ public class ScoreManager : MonoBehaviour
     public Transform filledSentenceStartingPoint;
     public GameObject filledSentencePrefab;
 
+    public float bestScore = 0;
+    public string bestSentence = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +47,16 @@ public class ScoreManager : MonoBehaviour
         GameObject particle = Instantiate(scoreParticlePrefab, scoreText.transform);
         particle.GetComponent<TextMeshProUGUI>().text = "" + points;
 
+        if(bestScore < points)
+        {
+            bestScore = points;
+            bestSentence = sentenceFilled;
+        }
+
         if (score >= scoreToWin)
+        {
             Debug.Log("WINNER! " + time + " Seconds");
+            Debug.Log("Best Sentence: " + bestSentence);
+        }
     }
 }

@@ -684,6 +684,8 @@ MonoBehaviour:
   distanceBetweenFilledSentences: 0
   filledSentenceStartingPoint: {fileID: 0}
   filledSentencePrefab: {fileID: 0}
+  bestScore: 0
+  bestSentence: 
 --- !u!114 &472636160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1739,7 +1741,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -2.1560912, y: 3.249016}
-      - {x: 0.025157273, y: 0.45072985}
+      - {x: -0.114369094, y: -1.6421609}
       - {x: 2.2656903, y: 3.253648}
 --- !u!114 &1917511736
 MonoBehaviour:
