@@ -61,13 +61,18 @@ public class SentenceController : MonoBehaviour
         textUI.text = currentText;
     }
 
-    bool CheckForWordEntrance(float x)//,WordData wd)
+    bool CheckForWordEntrance(float x, TextMeshProUGUI wd)
     {
         for(int i = 0; i < collisions.Count; i++)
         {
             if(Mathf.Abs(x - collisions[i]) < 0.2f)
             {
-                //CheckScore(wd.points);
+
+                if(wd.tag == "Positive")
+                    ChangeScore(wd.text.Length);
+                else if (wd.tag == "Negative")
+                    ChangeScore(-wd.text.Length);
+
                 collisions.RemoveAt(i);
                 i--;
 
@@ -90,10 +95,10 @@ public class SentenceController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "words")
+        if(collision.tag == "words" || collision.tag == "Positive" || collision.tag == "Negative")
         {
-            bool fitsBlank = CheckForWordEntrance(collision.transform.position.x);
-            if(fitsBlank) //This can be updated to have a timer before it completely resets, perhaps having a fancy lock in color.
+            bool fitsBlank = CheckForWordEntrance(collision.transform.position.x, collision.GetComponent<TextMeshProUGUI>());
+            if(fitsBlank) //This can be updated to have a timer before it completely resets, perhaps having a fancy lock-in color.
                 Destroy(collision.gameObject);
         }
     }
