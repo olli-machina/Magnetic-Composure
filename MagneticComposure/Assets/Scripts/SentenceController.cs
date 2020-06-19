@@ -16,15 +16,20 @@ public class SentenceController : MonoBehaviour
     public List<SentencePresets> presets;
     public string currentText;
     public int currentMultiplier;
+    public int currentPoints;
     public float plannedFontWidth = 1;
     public Canvas worldSpace;
     public TextMeshProUGUI textUI;
 
+    public float inSlotRange = .5f;
+
     private List<float> collisions;
     private BoxCollider2D collider;
+    private ScoreManager scoreManager;
 
     void Start()
     {
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         collisions = new List<float>();
         collider = GetComponent<BoxCollider2D>();
         ChooseNewPresets();
@@ -32,6 +37,8 @@ public class SentenceController : MonoBehaviour
 
     void ChooseNewPresets()
     {
+        currentPoints = 0;
+
         //Determine the New Sentence Data to currently use
         int rnd = Random.Range(0, presets.Count);
         currentText = presets[rnd].text;
@@ -52,7 +59,6 @@ public class SentenceController : MonoBehaviour
         collisions.Clear();
         while (test.IndexOf("_____") > -1)
         {
-            Debug.Log("" + (leftSide + ((test.IndexOf("_____") + 2.5f) * plannedFontWidth)));
             collisions.Add(leftSide + ((test.IndexOf("_____") + 2.5f) * plannedFontWidth));
             leftSide = leftSide + ((test.IndexOf("_____") + 5) * plannedFontWidth);
             test = test.Substring(test.IndexOf("_____") + 6);
@@ -65,19 +71,23 @@ public class SentenceController : MonoBehaviour
     {
         for(int i = 0; i < collisions.Count; i++)
         {
-            if(Mathf.Abs(x - collisions[i]) < 0.2f)
+            if(Mathf.Abs(x - collisions[i]) < inSlotRange)
             {
 
                 if(wd.tag == "Positive")
-                    ChangeScore(wd.text.Length);
+                    currentPoints = currentPoints + wd.text.Length * currentMultiplier;
                 else if (wd.tag == "Negative")
-                    ChangeScore(-wd.text.Length);
+                    currentPoints = currentPoints + -wd.text.Length * currentMultiplier;
+
+                Debug.Log("Current Points: " + currentPoints);
 
                 collisions.RemoveAt(i);
                 i--;
 
                 if(collisions.Count == 0)
                 {
+                    scoreManager.ChangeScore(currentPoints);
+
                     //This can be updated to have a timer before it completely resets, perhaps having a fancy fade away then reappear
                     ChooseNewPresets();
                 }
@@ -86,11 +96,6 @@ public class SentenceController : MonoBehaviour
             }
         }
         return false;
-    }
-
-    void ChangeScore(int points)
-    {
-        Debug.Log("points: " + (points * currentMultiplier));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
