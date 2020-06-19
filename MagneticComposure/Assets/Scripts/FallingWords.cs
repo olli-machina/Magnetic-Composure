@@ -22,9 +22,15 @@ public class FallingWords : MonoBehaviour
 
         wordVibe = Random.Range(0, 2); //positive or negative word
         if (wordVibe == 1)
+        {
             good = true;
+            transform.gameObject.tag = "Positive";
+        }
         else
+        {
             good = false;
+            transform.gameObject.tag = "Negative";
+        }
 
         wordMain = gameManager.RandomWord(good); //get the word
         Debug.Log(wordMain);
@@ -44,7 +50,8 @@ public class FallingWords : MonoBehaviour
     {
         if (col.tag != "Positive" || col.tag != "Negative")
         {
-
+            Physics2D.IgnoreCollision(col.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
+            
         }
         else if (col.tag == gameObject.tag)
         {
