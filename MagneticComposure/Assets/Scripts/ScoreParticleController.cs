@@ -5,14 +5,12 @@ using TMPro;
 
 public class ScoreParticleController : MonoBehaviour
 {
-    public Color pos;
-    public Color neg;
-    public Color neu;
     public float particleRadiusVertical = 1;
     public float particleRadiusHorizontal = 1;
     public Vector2 offset;
 
     private TextMeshProUGUI text;
+    private ScoreManager scoreManager;
 
     public float timeSolid;
     public float timeFading;
@@ -24,9 +22,8 @@ public class ScoreParticleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         text = GetComponent<TextMeshProUGUI>();
-
-        
         setFading = timeFading;
     }
 
@@ -43,11 +40,11 @@ public class ScoreParticleController : MonoBehaviour
 
         //Set Correct Color
         if (text.text == "0")
-            text.color = neu;
+            text.color = scoreManager.neu;
         else if (text.text.IndexOf('-') == 0)
-            text.color = neg;
+            text.color = scoreManager.neg;
         else
-            text.color = pos;
+            text.color = scoreManager.pos;
 
         if(timeSolid > 0)
         {

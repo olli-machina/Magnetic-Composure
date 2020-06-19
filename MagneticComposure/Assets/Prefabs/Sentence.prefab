@@ -381,17 +381,32 @@ MonoBehaviour:
   presets:
   - text: I'm a _____ person
     multiplier: 1
-  - text: I'm a really _____ person
+  - text: I'm a REALLY _____ person
     multiplier: 2
   - text: I'm not a _____ person
     multiplier: -1
   - text: I'm a _____ and _____ person
     multiplier: 1
+  - text: I'm a _____ and _____ person
+    multiplier: 1
+  - text: I'm a _____ and _____ person
+    multiplier: 1
+  - text: I'm a _____ and _____ person
+    multiplier: 1
+  - text: I'm a _____ and _____ person
+    multiplier: 1
+  - text: I'm a _____ and _____ person
+    multiplier: 1
+  - text: I'm a _____ and _____ person
+    multiplier: 1
   currentText: 
   currentMultiplier: 0
+  currentPoints: 0
   plannedFontWidth: 0.4
   worldSpace: {fileID: 4729953618401684968}
   textUI: {fileID: 4729953617853464100}
+  inSlotRange: 0.6
+  wordsCaught: []
 --- !u!61 &4729953618459710884
 BoxCollider2D:
   m_ObjectHideFlags: 0
