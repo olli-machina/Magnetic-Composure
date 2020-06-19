@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float xMove = 10f;
+    float xMove = 10f, yMove = 10f;
     public float speed;
-    float yMove = 10f;
+    private float minX = -8f, maxX = 8f, minY = 4.5f, maxY = -2.5f;
     Rigidbody2D rb;
     public Vector2 newVelocity;
     Camera cam;
@@ -25,13 +25,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         CheckInput();
-        // convert mouse position into world coordinates
+
+
+
         Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // get direction you want to point at
         Vector2 direction = (mouseWorldPosition - (Vector2)transform.position).normalized;
-
-        // set vector of transform directly
         transform.up = direction;
     }
 
@@ -44,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
     {
         xMove = Input.GetAxis("Horizontal") * speed;
         yMove = Input.GetAxis("Vertical") * speed;
+        //Vector3 pos = transform.position;
+        //pos.x = Mathf.Clamp(pos.x, minX, maxX);
+        //pos.y = Mathf.Clamp(pos.y, minY, maxY);
+        //transform.position = pos;
     }
 
     void Move()
