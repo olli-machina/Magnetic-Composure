@@ -9,15 +9,30 @@ public class PlayerMovement : MonoBehaviour
     float yMove = 10f;
     Rigidbody2D rb;
     public Vector2 newVelocity;
+    Camera cam;
+
+    void Awake()
+    {
+        cam = Camera.main;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
     {
         CheckInput();
+        // convert mouse position into world coordinates
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // get direction you want to point at
+        Vector2 direction = (mouseWorldPosition - (Vector2)transform.position).normalized;
+
+        // set vector of transform directly
+        transform.up = direction;
     }
 
     void FixedUpdate()
