@@ -24,7 +24,7 @@ public class Magnet : MonoBehaviour
 
     void CheckInput()
     {
-        if (objectInRange != null)
+        if (objectInRange != null && occupied)
         { 
             if (Input.GetMouseButton(0))
             {
@@ -32,7 +32,6 @@ public class Magnet : MonoBehaviour
                 repel = false;
 
                 objectInRange.transform.position = Vector3.MoveTowards(objectInRange.transform.position, new Vector3(targetPosition.x, objectInRange.transform.position.y, objectInRange.transform.position.z), step / (objectInRange.GetComponent<Rigidbody2D>().drag) * 10);
-                //objectInRange.transform.up = targetPosition - objectInRange.transform.position;
             }
             else if (Input.GetMouseButton(1))
             {
@@ -61,6 +60,7 @@ public class Magnet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Enter");
         if(col.gameObject.tag == "Positive" || (col.gameObject.tag == "Negative"))
         {
             if (!occupied)
@@ -70,12 +70,24 @@ public class Magnet : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
+    {
+        Debug.Log("Stay");
+        if (col.gameObject.tag == "Positive" || (col.gameObject.tag == "Negative"))
+        {
+            occupied = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.tag == "Positive" || (col.gameObject.tag == "Negative"))
         {
             if (occupied)
+            {
                 occupied = false;
+                objectInRange = null;
+            }
         }
     }
 }
