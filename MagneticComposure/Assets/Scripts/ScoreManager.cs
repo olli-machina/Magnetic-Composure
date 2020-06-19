@@ -44,8 +44,6 @@ public class ScoreManager : MonoBehaviour
         GameObject particle = Instantiate(scoreParticlePrefab, scoreText.transform);
         particle.GetComponent<TextMeshProUGUI>().text = "" + points;
 
-        Debug.Log(sentenceFilled);
-
         if (score >= scoreToWin)
             Debug.Log("WINNER! " + time + " Seconds");
     }

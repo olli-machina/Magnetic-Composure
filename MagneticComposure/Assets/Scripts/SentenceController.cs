@@ -65,8 +65,10 @@ public class SentenceController : MonoBehaviour
         {
             collisions.Add(leftSide + ((test.IndexOf("_____") + 2.5f) * plannedFontWidth));
             leftSide = leftSide + ((test.IndexOf("_____") + 5) * plannedFontWidth);
-            if(test.Length > test.IndexOf("_____") + 6)
-            test = test.Substring(test.IndexOf("_____") + 6);
+            if (test.Length > test.IndexOf("_____") + 6)
+                test = test.Substring(test.IndexOf("_____") + 6);
+            else
+                test = "";
         }
 
         textUI.text = currentText;
@@ -96,6 +98,7 @@ public class SentenceController : MonoBehaviour
                 //Make the word still
                 Destroy(wd.GetComponent<FallingWords>());
                 Destroy(wd.GetComponent<Rigidbody2D>());
+                Destroy(wd.GetComponent<BoxCollider2D>());
                 wordsCaught.Add(wd.gameObject);
 
                 //Update points
@@ -112,7 +115,10 @@ public class SentenceController : MonoBehaviour
                     
                     foreach(GameObject obj in wordsCaught)
                     {
-                        sentenceCreated = sentenceCreated.Substring(0, sentenceCreated.IndexOf('_')) + obj.GetComponent<TextMeshProUGUI>().text + sentenceCreated.Substring(sentenceCreated.IndexOf('_') + 5);
+                        if (sentenceCreated.Length > sentenceCreated.IndexOf('_') + 5)
+                            sentenceCreated = sentenceCreated.Substring(0, sentenceCreated.IndexOf('_')) + obj.GetComponent<TextMeshProUGUI>().text + sentenceCreated.Substring(sentenceCreated.IndexOf('_') + 5);
+                        else
+                            sentenceCreated = sentenceCreated.Substring(0, sentenceCreated.IndexOf('_')) + obj.GetComponent<TextMeshProUGUI>().text;
                     }
 
                     scoreManager.ChangeScore(currentPoints, sentenceCreated);
