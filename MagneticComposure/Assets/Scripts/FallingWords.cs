@@ -22,9 +22,15 @@ public class FallingWords : MonoBehaviour
 
         wordVibe = Random.Range(0, 2); //positive or negative word
         if (wordVibe == 1)
+        {
             good = true;
+            transform.gameObject.tag = "Positive";
+        }
         else
+        {
             good = false;
+            transform.gameObject.tag = "Negative";
+        }
 
         wordMain = gameManager.RandomWord(good); //get the word
         Debug.Log(wordMain);
@@ -40,13 +46,14 @@ public class FallingWords : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.tag != "Positive" || col.tag != "Negative")
+        if (col.transform.tag == "Player")
         {
-
+            Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
+            
         }
-        else if (col.tag == gameObject.tag)
+        else if (col.transform.tag == gameObject.tag)
         {
             //add to score
         }
