@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Positive
   - Negative
+  - words
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Constraints
+  - Player
   - 
   - 
   - 

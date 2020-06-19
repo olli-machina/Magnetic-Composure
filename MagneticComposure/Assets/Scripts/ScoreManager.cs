@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public Color neu;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI senetenceCountText;
     public GameObject scoreParticlePrefab;
 
     public int score;
@@ -23,6 +24,9 @@ public class ScoreManager : MonoBehaviour
     public Transform filledSentenceStartingPoint;
     public GameObject filledSentencePrefab;
 
+    public float bestScore = 0;
+    public string bestSentence = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,7 @@ public class ScoreManager : MonoBehaviour
     {
         time = time + Time.deltaTime;
         scoreText.text = "" + score + "/" + scoreToWin;
+        senetenceCountText.text = "" + sentencesFilledCount + " Sentences Filled";
     }
 
     public void ChangeScore(int points, string sentenceFilled)
@@ -42,9 +47,16 @@ public class ScoreManager : MonoBehaviour
         GameObject particle = Instantiate(scoreParticlePrefab, scoreText.transform);
         particle.GetComponent<TextMeshProUGUI>().text = "" + points;
 
-        Debug.Log(sentenceFilled);
+        if(bestScore < points)
+        {
+            bestScore = points;
+            bestSentence = sentenceFilled;
+        }
 
         if (score >= scoreToWin)
+        {
             Debug.Log("WINNER! " + time + " Seconds");
+            Debug.Log("Best Sentence: " + bestSentence);
+        }
     }
 }

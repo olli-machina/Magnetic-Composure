@@ -383,22 +383,36 @@ MonoBehaviour:
     multiplier: 1
   - text: I'm a REALLY _____ person
     multiplier: 2
-  - text: I'm not a _____ person
+  - text: I'm NOT a _____ person
     multiplier: -1
   - text: I'm a _____ and _____ person
     multiplier: 1
-  - text: I'm a _____ and _____ person
+  - text: I am feeling _____
     multiplier: 1
-  - text: I'm a _____ and _____ person
+  - text: I am REALLY feeling _____
+    multiplier: 2
+  - text: I would describe myself as _____
     multiplier: 1
-  - text: I'm a _____ and _____ person
+  - text: I DEFINITELY would describe myself as _____
+    multiplier: 4
+  - text: I am NOT feeling _____
+    multiplier: -1
+  - text: I am REALLY NOT feeling _____
+    multiplier: -2
+  - text: I would NOT describe myself as _____
+    multiplier: -2
+  - text: I DEFINITELY would NOT describe myself as _____
+    multiplier: -4
+  - text: I have _____ friends
     multiplier: 1
-  - text: I'm a _____ and _____ person
+  - text: _____ is part of who I am
     multiplier: 1
-  - text: I'm a _____ and _____ person
+  - text: _____ is NOT me
+    multiplier: -1
+  - text: A date would think I'm _____
     multiplier: 1
-  - text: I'm a _____ and _____ person
-    multiplier: 1
+  - text: My friends think I'm _____, DEFINITELY
+    multiplier: 4
   currentText: 
   currentMultiplier: 0
   currentPoints: 0
