@@ -485,7 +485,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.2
+  m_fontSize: 17
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -832,6 +832,17 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4729953618339461672, guid: 03e3242bca5a74846ad93cc355e7a739,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f562a8c449bcd948af56f9d6e7fce5d,
+        type: 3}
+    - target: {fileID: 4729953618339461672, guid: 03e3242bca5a74846ad93cc355e7a739,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4729953618459710886, guid: 03e3242bca5a74846ad93cc355e7a739,
         type: 3}
       propertyPath: m_Name
@@ -891,6 +902,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729953618679891051, guid: 03e3242bca5a74846ad93cc355e7a739,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f562a8c449bcd948af56f9d6e7fce5d,
+        type: 3}
+    - target: {fileID: 4729953618679891051, guid: 03e3242bca5a74846ad93cc355e7a739,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729953618679891051, guid: 03e3242bca5a74846ad93cc355e7a739,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e3242bca5a74846ad93cc355e7a739, type: 3}
@@ -3460,7 +3487,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 49.2
+  m_fontSize: 90.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
