@@ -20,6 +20,6 @@ public class SliderPlayerPref : MonoBehaviour
 
     public void Sound()
     {
-        GameObject.FindObjectOfType<AudioMaster>().transform.Find("Gain Coins").GetComponent<AudioSource>().Play();
+        GameObject.FindObjectOfType<AudioMaster>().transform.Find("Button Click").GetComponent<AudioSource>().Play();
     }
 }

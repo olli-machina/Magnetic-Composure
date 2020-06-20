@@ -19,6 +19,10 @@ public class MainMenuManager : MonoBehaviour
         
     }
 
+    public void ButtonSound()
+    {
+        GameObject.FindObjectOfType<AudioMaster>().transform.Find("Button Click").GetComponent<AudioSource>().Play();
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);

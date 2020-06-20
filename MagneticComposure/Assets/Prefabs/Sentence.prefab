@@ -5156,7 +5156,7 @@ MonoBehaviour:
     multiplier: -2
   - text: I would NOT describe myself as _____
     multiplier: -2
-  - text: I DEFINITELY would NOT describe myself as _____
+  - text: I DEFINITELY DON'T describe myself as _____
     multiplier: -4
   - text: I have _____ friends
     multiplier: 1

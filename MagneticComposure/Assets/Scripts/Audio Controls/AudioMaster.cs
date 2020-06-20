@@ -22,7 +22,7 @@ public class AudioMaster : MonoBehaviour
 
     public void buttonNoise()
     {
-        transform.Find("Button Pressed").GetComponent<AudioSource>().Play();
+        transform.Find("Button Click").GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
