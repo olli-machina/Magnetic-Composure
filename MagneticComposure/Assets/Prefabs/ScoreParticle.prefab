@@ -178,11 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888e71a126628df4da6b86bebb2dcb70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: {r: 0, g: 0.7264151, b: 0, a: 1}
-  neg: {r: 0.6698113, g: 0, b: 0, a: 1}
-  neu: {r: 0.24705882, g: 0.47015563, b: 0.62352943, a: 1}
   particleRadiusVertical: 50
   particleRadiusHorizontal: 100
-  offset: {x: 0, y: 0}
+  offset: {x: 0, y: 30}
   timeSolid: 1
   timeFading: 1
