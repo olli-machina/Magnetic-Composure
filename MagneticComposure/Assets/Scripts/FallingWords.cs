@@ -41,7 +41,24 @@ public class FallingWords : MonoBehaviour
         wordText.text = wordMain; //set the word
         wordText.color = colors[Random.Range(0, colors.Length)];
 
-        drag = wordMain.Length * 2;
+        if(wordMain.Length == 4)
+        {
+            drag = 5;
+        }
+        else if(wordMain.Length == 5)
+        {
+            drag = 6;
+        }
+        else if (wordMain.Length == 6 || wordMain.Length == 7)
+        {
+            drag = 9;
+        }
+        else
+        {
+            drag = 11;
+        }
+
+        //drag = wordMain.Length * 2;
         rb.drag = drag; //make the movement speed change
     }
 
