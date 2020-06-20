@@ -10,6 +10,7 @@ public class Magnet : MonoBehaviour
     public float moveSpeed, step;
     private Vector3 targetPosition;
     private GameObject objectInRange;
+    public Canvas pauseCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,15 @@ public class Magnet : MonoBehaviour
     {
         step = moveSpeed * Time.deltaTime;
         targetPosition = transform.position;
-        CheckInput();
+        if (!pauseCanvas.enabled)
+        {
+            CheckInput();
+        }
+        else
+        {
+            GameObject.FindObjectOfType<AudioMaster>().transform.Find("Attraction").GetComponent<AudioSource>().Stop();
+            GameObject.FindObjectOfType<AudioMaster>().transform.Find("Repelling").GetComponent<AudioSource>().Stop();
+        }
     }
 
     void CheckInput()
