@@ -485,7 +485,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 17
+  m_fontSize: 9.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 90.85
+  m_fontSize: 49.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4079,13 +4079,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917511733}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.120000005, y: 0.56000006, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.09, y: 1.51, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 902120396}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!60 &1917511735
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4103,17 +4103,17 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 3.92, y: 5.27}
+    newSize: {x: 3.92, y: 5.27}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -2.1560912, y: 3.249016}
-      - {x: -0.28083563, y: -2.6409616}
-      - {x: 2.2656903, y: 3.253648}
+    - - {x: -0.1559043, y: 3.1840863}
+      - {x: -1.9917338, y: -2.5554442}
+      - {x: 1.8808604, y: -2.4760332}
 --- !u!114 &1917511736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4136,6 +4136,8 @@ MonoBehaviour:
   moveSpeed: 1
   step: 0
   pauseCanvas: {fileID: 82057909}
+  atWave: {fileID: 21300000, guid: 1fa50fa2760a888409e3793174202eeb, type: 3}
+  repWave: {fileID: 21300000, guid: 3bd935974173f284eb4b2122476d577c, type: 3}
 --- !u!212 &1917511737
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4180,7 +4182,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.92, y: 5.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

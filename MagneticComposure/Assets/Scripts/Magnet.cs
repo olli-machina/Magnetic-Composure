@@ -11,6 +11,8 @@ public class Magnet : MonoBehaviour
     private Vector3 targetPosition;
     private GameObject objectInRange;
     public Canvas pauseCanvas;
+    public Sprite atWave, repWave;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +75,7 @@ public class Magnet : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             sr.sprite = pos;
+            gameObject.GetComponent<SpriteRenderer>().sprite = atWave;
             if (!GameObject.FindObjectOfType<AudioMaster>().transform.Find("Attraction").GetComponent<AudioSource>().isPlaying)
                 GameObject.FindObjectOfType<AudioMaster>().transform.Find("Attraction").GetComponent<AudioSource>().Play();
         }
@@ -82,6 +85,7 @@ public class Magnet : MonoBehaviour
         if (Input.GetMouseButton(1) && !Input.GetMouseButton(0))
         {
             sr.sprite = neg;
+            gameObject.GetComponent<SpriteRenderer>().sprite = repWave;
             if (!GameObject.FindObjectOfType<AudioMaster>().transform.Find("Repelling").GetComponent<AudioSource>().isPlaying)
                 GameObject.FindObjectOfType<AudioMaster>().transform.Find("Repelling").GetComponent<AudioSource>().Play();
         }
@@ -91,6 +95,7 @@ public class Magnet : MonoBehaviour
         if(!Input.GetMouseButton(1) && !Input.GetMouseButton(0))
         {
             sr.sprite = neu;
+            gameObject.GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 
