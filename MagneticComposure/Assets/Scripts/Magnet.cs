@@ -32,7 +32,6 @@ public class Magnet : MonoBehaviour
             {
                 attract = true;
                 repel = false;
-                sr.sprite = pos;
 
                 objectInRange.transform.position = Vector3.MoveTowards(objectInRange.transform.position, new Vector3(targetPosition.x, objectInRange.transform.position.y, objectInRange.transform.position.z), step / (objectInRange.GetComponent<Rigidbody2D>().drag) * 10);
             }
@@ -40,7 +39,6 @@ public class Magnet : MonoBehaviour
             {
                 attract = false;
                 repel = true;
-                sr.sprite = neg;
 
 
                 if (objectInRange.transform.position.x < transform.position.x)
@@ -59,8 +57,31 @@ public class Magnet : MonoBehaviour
             {
                 attract = false;
                 repel = false;
-                sr.sprite = neu;
             }
+        }
+
+
+        if (Input.GetMouseButton(0))
+        {
+            sr.sprite = pos;
+            if (!GameObject.FindObjectOfType<AudioMaster>().transform.Find("Attraction").GetComponent<AudioSource>().isPlaying)
+                GameObject.FindObjectOfType<AudioMaster>().transform.Find("Attraction").GetComponent<AudioSource>().Play();
+        }
+        else
+            GameObject.FindObjectOfType<AudioMaster>().transform.Find("Attraction").GetComponent<AudioSource>().Stop();
+
+        if (Input.GetMouseButton(1) && !Input.GetMouseButton(0))
+        {
+            sr.sprite = neg;
+            if (!GameObject.FindObjectOfType<AudioMaster>().transform.Find("Repelling").GetComponent<AudioSource>().isPlaying)
+                GameObject.FindObjectOfType<AudioMaster>().transform.Find("Repelling").GetComponent<AudioSource>().Play();
+        }
+        else
+            GameObject.FindObjectOfType<AudioMaster>().transform.Find("Repelling").GetComponent<AudioSource>().Stop();
+
+        if(!Input.GetMouseButton(1) && !Input.GetMouseButton(0))
+        {
+            sr.sprite = neu;
         }
     }
 

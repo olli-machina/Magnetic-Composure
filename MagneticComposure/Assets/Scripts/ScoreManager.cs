@@ -44,6 +44,9 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeScore(int points, string sentenceFilled)
     {
+
+        GameObject.FindObjectOfType<AudioMaster>().transform.Find("Finish Sentence").GetComponent<AudioSource>().Play();
+
         if (points > 0)
             ps.startColor = pos;
         else if (points < 0)
