@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Audio Controls\SliderPlayerPref.cs" />
     <Compile Include="Assets\Scripts\Audio Controls\musicController.cs" />
     <Compile Include="Assets\Scripts\Constraints.cs" />
+    <Compile Include="Assets\Scripts\EndScreenController.cs" />
     <Compile Include="Assets\Scripts\FallingWords.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Magnet.cs" />
