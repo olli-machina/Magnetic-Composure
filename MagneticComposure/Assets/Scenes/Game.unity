@@ -288,7 +288,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25.4
+  m_fontSize: 14.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 48.95
+  m_fontSize: 25.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2062,7 +2062,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -2.1560912, y: 3.249016}
-      - {x: -0.114369094, y: -1.6421609}
+      - {x: -0.28083563, y: -2.6409616}
       - {x: 2.2656903, y: 3.253648}
 --- !u!114 &1917511736
 MonoBehaviour:

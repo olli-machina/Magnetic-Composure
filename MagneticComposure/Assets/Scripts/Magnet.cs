@@ -75,6 +75,7 @@ public class Magnet : MonoBehaviour
         Debug.Log("Stay");
         if (col.gameObject.tag == "Positive" || (col.gameObject.tag == "Negative"))
         {
+            objectInRange = col.gameObject;
             occupied = true;
         }
     }
