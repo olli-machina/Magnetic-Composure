@@ -11,10 +11,13 @@ public class EndScreenController : MonoBehaviour
     public Image bestSentenceMagnetImage;
     public TextMeshProUGUI bestSentenceText;
     public TextMeshProUGUI bestSentenceLabelText;
+    AudioSource attract, repel;
 
     // Start is called before the first frame update
     void Start()
     {
+        attract = GameObject.Find("Attraction").GetComponent<AudioSource>();
+        repel = GameObject.Find("Repelling").GetComponent<AudioSource>();
         int min = (int)(PlayerPrefs.GetFloat("time") / 60);
         float sec = PlayerPrefs.GetFloat("time") % 60;
 
@@ -25,6 +28,11 @@ public class EndScreenController : MonoBehaviour
 
         bodyText.text = bodyText.text + "\n\nSetences Filled: " + PlayerPrefs.GetInt("sentenceCount") + "\nTime Played: " + min + ":" + secStr;
         bestSentenceText.text = PlayerPrefs.GetString("bestSentence");
+        if(attract.gameObject.activeInHierarchy)
+            attract.enabled = false;
+
+        if (repel.gameObject.activeInHierarchy)
+            repel.enabled = false;
     }
 
     public void Menu()
