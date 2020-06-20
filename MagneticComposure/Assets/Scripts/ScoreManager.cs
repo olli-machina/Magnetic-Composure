@@ -39,7 +39,7 @@ public class ScoreManager : MonoBehaviour
     {
         time = time + Time.deltaTime;
         scoreText.text = "" + score + "/" + scoreToWin;
-        senetenceCountText.text = "" + sentencesFilledCount + " Sentences Filled";
+        senetenceCountText.text = "" + sentencesFilledCount + "\nSentences\nFilled";
     }
 
     public void ChangeScore(int points, string sentenceFilled)

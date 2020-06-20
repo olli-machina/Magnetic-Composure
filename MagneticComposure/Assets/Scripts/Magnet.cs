@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
+    public SpriteRenderer sr;
+    public Sprite neu, pos, neg;
     public bool attract, repel, occupied = false;
     public float moveSpeed, step;
     private Vector3 targetPosition;
@@ -30,6 +32,7 @@ public class Magnet : MonoBehaviour
             {
                 attract = true;
                 repel = false;
+                sr.sprite = pos;
 
                 objectInRange.transform.position = Vector3.MoveTowards(objectInRange.transform.position, new Vector3(targetPosition.x, objectInRange.transform.position.y, objectInRange.transform.position.z), step / (objectInRange.GetComponent<Rigidbody2D>().drag) * 10);
             }
@@ -37,6 +40,8 @@ public class Magnet : MonoBehaviour
             {
                 attract = false;
                 repel = true;
+                sr.sprite = neg;
+
 
                 if (objectInRange.transform.position.x < transform.position.x)
                 {
@@ -54,6 +59,7 @@ public class Magnet : MonoBehaviour
             {
                 attract = false;
                 repel = false;
+                sr.sprite = neu;
             }
         }
     }
