@@ -22,6 +22,7 @@ public class SentenceController : MonoBehaviour
     public float plannedFontWidth = 1;
     public Canvas worldSpace;
     public TextMeshProUGUI textUI;
+    public ParticleSystem ps;
 
     public float inSlotRange = .5f;
 
@@ -56,6 +57,10 @@ public class SentenceController : MonoBehaviour
         Vector2 bec = myBoxCollider.size;
         bec.x = plannedFontWidth * currentText.Length;
         myBoxCollider.size = bec;
+        Vector3 pec = ps.transform.localScale;
+        pec.x = plannedFontWidth * currentText.Length;
+        ps.startSize = 1/(plannedFontWidth * currentText.Length);
+        ps.transform.localScale = pec;
 
         //Determine collision points
         string test = currentText;

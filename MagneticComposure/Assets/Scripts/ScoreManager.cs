@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI senetenceCountText;
     public GameObject scoreParticlePrefab;
+    public ParticleSystem ps;
 
     public int score;
     public int sentencesFilledCount;
@@ -42,6 +43,15 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeScore(int points, string sentenceFilled)
     {
+        if (points > 0)
+            ps.startColor = pos;
+        else if (points < 0)
+            ps.startColor = neg;
+        else
+            ps.startColor = neu;
+
+        ps.Play();
+
         sentencesFilledCount++;
         score += points;
         GameObject particle = Instantiate(scoreParticlePrefab, scoreText.transform);
