@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -65,8 +66,14 @@ public class ScoreManager : MonoBehaviour
 
         if (score >= scoreToWin)
         {
+            PlayerPrefs.SetFloat("time", time);
+            PlayerPrefs.SetInt("sentenceCount", sentencesFilledCount);
+            PlayerPrefs.SetString("bestSentence", bestSentence);
+
             Debug.Log("WINNER! " + time + " Seconds");
             Debug.Log("Best Sentence: " + bestSentence);
+
+            SceneManager.LoadScene(2);
         }
     }
 }
