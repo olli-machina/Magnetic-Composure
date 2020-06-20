@@ -6,6 +6,8 @@ using TMPro;
 
 public class FallingWords : MonoBehaviour
 {
+    public Color[] colors;
+
     public int drag, wordVibe;
     public bool good;
     public string wordMain;
@@ -37,6 +39,7 @@ public class FallingWords : MonoBehaviour
         wordMain = gameManager.RandomWord(good); //get the word
         Debug.Log(wordMain);
         wordText.text = wordMain; //set the word
+        wordText.color = colors[Random.Range(0, colors.Length)];
 
         drag = wordMain.Length * 2;
         rb.drag = drag; //make the movement speed change
