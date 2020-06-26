@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class SliderPlayerPref : MonoBehaviour
 {
     public string perf;
-    // Start is called before the first frame update
     void Start()
     {
         GetComponent<Slider>().value = PlayerPrefs.GetFloat(perf);

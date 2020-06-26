@@ -8,6 +8,14 @@ public class AudioMaster : MonoBehaviour
     public GameObject menu;
     public GameObject game;
 
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("sou"))
+            PlayerPrefs.SetFloat("sou", 1.0f);
+        if (!PlayerPrefs.HasKey("mus"))
+            PlayerPrefs.SetFloat("mus", 1.0f);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
